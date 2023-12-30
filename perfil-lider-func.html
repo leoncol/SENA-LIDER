@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3daf04;">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#" style="margin-left: -700px;"><img alt="Logo" style="max-height:42px; padding-top:3px; "src="images/logo_blanco.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="comunidad-lider-func.html">Comunidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="solicitudes-lider-func.html">Solicitudes de servicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro-empresa-lider-func.html">Registro de empresa</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-5" style="margin-right: -800px;">
+                    <li class="nav-item">
+                        <a class="nav-link selected" href="perfil-lider-func.html">Perfil</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-xl px-4 mt-4">
+        <!-- Account page navigation-->
+        <nav class="nav nav-borders">
+            <a class="nav-link active ms-0" href="perfil-lider.html" target="__blank">Perfil</a>
+        </nav>
+        <hr class="mt-0 mb-4">
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Foto de perfil</div>
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <img class="img-account-profile rounded-circle mb-2" id="profileImage" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        <!-- Profile picture help block-->
+                        <div class="small font-italic text-muted mb-4">JPG or PNG no puede tener un tamaño de mas de 5MB</div>
+                        <!-- Profile picture upload button-->
+                        <input type="file" id="uploadImage" style="display: none;" accept=".jpg, .jpeg, .png">
+                        <button class="btn custom-button-color" type="button" onclick="document.getElementById('uploadImage').click();">Cambiar foto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Información de la cuenta</div>
+                    <div class="card-body">
+                        <form>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3 form-row-gx-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputFirstName">Nombres</label>
+                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Ingrese sus nombres">
+                                </div>
+                                <!-- Form Group (last name)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLastName">Apellidos</label>
+                                    <input class="form-control" id="inputLastName" type="text" placeholder="Ingrese sus apellidos">
+                                </div>
+                            </div>
+                            <!-- Form Row        -->
+                            <div class="row gx-3 mb-3 form-row-gx-3">
+                                <!-- Form Group (organization name)-->
+                                <!-- Form Group (location)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputLocation">Ubicación</label>
+                                    <input class="form-control" id="inputLocation" type="text" placeholder="Ingrese la ciudad donde se encuentra ubicado">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Correo electrónico</label>
+                                    <input class="form-control" id="inputEmailAddress" type="text" placeholder="Ingrese su correo electrónico">
+                                </div>
+                            </div>
+                            <!-- Form Row-->
+                            <div class="row gx-3 mb-3 form-row-gx-3">
+                                <!-- Form Group (email address)-->
+                                
+                                <!-- Form Group (phone number)-->
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputPhone">Número teléfonico</label>
+                                    <input class="form-control" id="inputPhone" type="text" placeholder="Ingrese su número de teléfono">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="small mb-1" for="inputRol">Rol</label>
+                                    <div class="gray-field">
+                                    <input class="form-control" id="inputRol" type="text" placeholder="Pre-selected rol" value="Pre-selected value" readonly>
+                                </div>
+                        
+                                    </div>
+                                        </div>
+                                        <button class="btn custom-button-color" type="button">Guardar cambios</button>
+                            </div>
+                            <!-- Save changes button-->
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        function saveChanges() {
+            // Add your logic to save changes here
+            alert('Changes saved!');
+        }
+
+        // Display selected image on file input change
+        document.getElementById('uploadImage').addEventListener('change', function () {
+            var input = this;
+            var image = document.getElementById('profileImage');
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                image.src = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Repositorio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .task-table {
+            margin-top: 30px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        .status {
+            font-weight: bold;
+        }
+
+        .status.pending {
+            color: #ffc107;
+        }
+
+        .status.completed {
+            color: #28a745;
+        }
+
+        .status.in-progress {
+            color: #007bff;
+        }
+
+        .status.on-hold {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3daf04;">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#" style="margin-left: -700px;"><img alt="Logo" style="max-height:42px; padding-top:3px; "src="images/logo_blanco.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="repositorio-subir-gestor.html">Subir a repositorio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link selected" href="repositorio-descargar-gestor.html">Explorar repositorio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proyectos-gestor.html">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuarios-gestor.html">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="asignar-gestor.html">Asignar tareas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="estadotareas-gestor.html">Estado de tareas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro-empresa-gestor.html">Registro de empresa</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-5" style="margin-right: -800px;">
+                    <li class="nav-item">
+                        <a class="nav-link perfil" href="perfil-gestor.html">Perfil</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   <br>
+    <center><h1>Buscar en repositorio</h1></center>
+     <div class="parent">
+         <!-- Search Bar -->
+         <div class="custom-form-group">
+            <label for="search" class="form-label">Buscar Documento</label>
+            <hr>
+            <input type="text" class="form-control" id="search" name="search" placeholder="Buscar documentos...">
+            <br>
+            <button type="button" class="btn custom-button-color" onclick="searchDocuments()">Buscar</button>
+        </div>
+
+        <!-- Display Search Results -->
+
+        <div class="custom-form-group">
+            <label for="nombre" class="form-label">Nombre</label>
+            <hr>
+            <!-- Automatically set name based on uploaded file -->
+            <input type="text" class="form-control" id="nombre" name="nombre" value="John Doe" readonly>
+        </div>
+        <div class="custom-form-group">
+            <label for="fecha" class="form-label">Fecha</label>
+            <hr>
+            <!-- Automatically set date based on uploaded file -->
+            <input type="date" class="form-control" id="fecha" name="fecha" value="2023-01-01" readonly>
+        </div>
+        <!-- "Comentario" removed -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        function uploadFile() {
+            // Your file upload logic goes here
+            alert("File uploaded successfully!");
+
+            // Additional logic for form submission goes here
+            submitRequest();
+        }
+
+        function submitRequest() {
+            // Your form submission logic goes here
+
+            // For demonstration purposes, let's just show an alert
+            alert("Form submitted successfully!");
+        }
+
+        function searchDocuments() {
+            // Get the search query from the input field
+            var searchQuery = document.getElementById('search').value;
+
+            // Perform an AJAX request to the server to fetch search results
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'search.php?query=' + encodeURIComponent(searchQuery), true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Display search results in the 'searchResults' div
+                    document.getElementById('searchResults').innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
