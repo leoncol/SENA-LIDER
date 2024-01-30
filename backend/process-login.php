@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Ensure you have a secure way to store database credentials
 $servername = "localhost";
 $username = "root";
@@ -30,11 +32,10 @@ if ($result->num_rows == 1) {
     // User found, verify password
     $row = $result->fetch_assoc();
     if (password_verify($password, $row['Contraseña'])) {
-        // Password is correct, redirect or set session
-        session_start();
+        // Password is correct, set session
         $_SESSION['user_email'] = $row['Correo']; // Adjusted to 'Correo'
-        // Redirect to dashboard or any other page
-        header("Location: ../perfil.html");
+        // Redirect to profile page
+        header("Location: ../perfil.php");
         exit();
     } else {
         // Password is incorrect
