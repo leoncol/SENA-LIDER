@@ -68,6 +68,9 @@
                     <li class="nav-item">
                         <a class="nav-link perfil" href="perfil.php">Perfil</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?logout=true">Cerrar sesión</a>
+                    </li>
                 </ul>
             </div>
         </div>

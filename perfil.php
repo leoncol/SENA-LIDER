@@ -62,6 +62,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+// Check if logout action is triggered
+if(isset($_GET['logout'])) {
+    // Destroy session
+    session_unset();
+    session_destroy();
+    
+    // Redirect to login page or any other desired location
+    header("Location: index.html");
+    exit();
+}
+
 // Close the database connection
 $conn->close();
 ?>
@@ -103,6 +114,9 @@ $conn->close();
                 <ul class="navbar-nav ms-5" style="margin-right: -800px;">
                     <li class="nav-item">
                         <a class="nav-link selected" href="perfil.php">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?logout=true">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
