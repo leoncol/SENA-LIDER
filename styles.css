@@ -1,28 +1,25 @@
 /* Add your custom styles in styles.css */
 body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    max-width: 400px;
-  }
-  /* Add this to your custom stylesheet */
-.custom-gray-bg {
-    background-color: #e4e0e0; /* Use your desired shade of gray */
-  }
-  
-  /* Add this to your custom stylesheet */
-.custom-button-color {
-    background-color: #3daf04; /* Replace with your desired color */
-    color: #fff; /* Set text color to white or another contrasting color */
-    
+  font-family: Arial, sans-serif;
 }
 
- /* Add custom styles for the navigation bar */
- .navbar-nav .nav-link {
+.container {
+  max-width: 100%; /* Change max-width to 100% for better responsiveness */
+}
+
+.custom-gray-bg {
+  background-color: #e4e0e0; /* Use your desired shade of gray */
+}
+
+.custom-button-color {
+  background-color: #3daf04; /* Replace with your desired color */
+  color: #fff; /* Set text color to white or another contrasting color */
+}
+
+.navbar-nav .nav-link {
   color: white; /* Set text color to white */
   position: relative; /* Enable positioning for the ::after pseudo-element */
-  margin-right: 60px; /* Increase the space between the categories */
+  margin-right: 30px; /* Decrease the space between the categories */
 }
 
 .navbar-nav .nav-link.selected::after {
@@ -37,51 +34,33 @@ body {
 
 .parent {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column sizes for responsiveness */
+  grid-gap: 20px; /* Use grid-gap for uniform spacing */
   margin: 20px; /* Add margin to the parent grid */
 }
 
-/* Add styles for the form-group */
 .form-group {
-  display: flex;
-  flex-direction: column;
-  border: 0px solid #ddd;
-  box-sizing: border-box;
-}
-
-.custom-form-group {
   display: flex;
   flex-direction: column;
   padding: 15px;
   border: 1px solid #ddd;
   box-sizing: border-box;
+  margin-bottom: 20px; /* Add margin-bottom for spacing between form groups */
 }
 
-/* Add styles for the form-label */
 .form-label {
-  margin-bottom: 5px;
+  margin-bottom: 10px; /* Increase margin-bottom for better separation */
   font-weight: bold;
 }
 
-/* Add styles for the form-select */
-.form-select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-}
-
-/* Add styles for the form-control */
+.form-select,
 .form-control {
   width: 100%;
-  padding: 8px;
+  padding: 10px; /* Adjust padding for better consistency */
   box-sizing: border-box;
+  margin-bottom: 10px; /* Add margin-bottom for spacing between form controls */
 }
 
-/* Add styles for the to-do panel */
 .todo-panel {
   grid-column: span 4; /* Make the to-do panel span all columns in the grid */
   margin: 20px;
@@ -102,88 +81,38 @@ body {
   margin-bottom: 10px;
 }
 
-  .img-account-profile {
-      height: 10rem;
-  }
-  .rounded-circle {
-      border-radius: 50% !important;
-  }
-  .card {
-      box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
-  }
-  .card .card-header {
-      font-weight: 500;
-  }
-  .card-header:first-child {
-      border-radius: 0.35rem 0.35rem 0 0;
-  }
-  .card-header {
-      padding: 1rem 1.35rem;
-      margin-bottom: 0;
-      background-color: rgba(33, 40, 50, 0.03);
-      border-bottom: 1px solid rgba(33, 40, 50, 0.125);
-  }
-  .form-control, .dataTable-input {
-      display: block;
-      width: 100%;
-      padding: 0.875rem 1.125rem;
-      font-size: 0.875rem;
-      font-weight: 400;
-      line-height: 1;
-      color: #69707a;
-      background-color: #fff;
-      background-clip: padding-box;
-      border: 1px solid #c5ccd6;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      border-radius: 0.35rem;
-      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-  
-  .nav-borders .nav-link.active {
-      color: #3daf04;
-      border-bottom-color: #3daf04
-  }
-  .nav-borders .nav-link {
-      color: #69707a;
-      border-bottom-width: 0.125rem;
-      border-bottom-style: solid;
-      border-bottom-color: transparent;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      padding-left: 0;
-      padding-right: 0;
-      margin-left: 1rem;
-      margin-right: 1rem;
-  }
-
-  .gray-field {
-    background-color: #ccc; /* Gray color */
-    padding: 10px; /* Adjust padding as needed */
+.img-account-profile {
+  max-width: 100%; /* Ensure the image fits within its container */
+  height: auto; /* Maintain aspect ratio */
 }
 
-.search-table{
-  padding: 10%;
-  margin-top: -6%;
+.card {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15); /* Use rgba for transparent shadow */
 }
-.search-box{
+
+.search-table {
+  padding: 5%; /* Reduce padding for better spacing */
+}
+
+.search-box {
   background: #c1c1c1;
   border: 1px solid #ababab;
-  padding: 3%;
+  padding: 2%; /* Adjust padding for better appearance */
 }
-.search-box input:focus{
-  box-shadow:none;
-  border:2px solid #eeeeee;
+
+.search-box input:focus {
+  box-shadow: none;
+  border: 2px solid #eeeeee;
 }
-.search-list{
+
+.search-list {
   background: #fff;
   border: 1px solid #ababab;
   border-top: none;
 }
-.search-list h3{
+
+.search-list h3 {
   background: #eee;
   padding: 3%;
-  margin-bottom: 0%;
+  margin-bottom: 0;
 }
-
