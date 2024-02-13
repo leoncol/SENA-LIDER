@@ -21,21 +21,24 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="repositorio-descargar-usuario.html">Explorar repositorio</a>
+                    <a class="nav-link" href="repositorio-descargar-usuario.php">Explorar repositorio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="proyecto.html">Proyecto</a>
+                    <a class="nav-link" href="proyecto.php">Proyecto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link selected" href="comunidad.html">Comunidad</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="solicitudes.html">Solicitudes de servicio</a>
+                    <a class="nav-link" href="solicitudes.php">Solicitudes de servicio</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-5" style="margin-right: -800px;">
                 <li class="nav-item">
                     <a class="nav-link perfil" href="perfil.php">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="?logout=true">Cerrar sesión</a>
                 </li>
             </ul>
         </div>

@@ -62,6 +62,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+// Check if logout action is triggered
+if(isset($_GET['logout'])) {
+    // Destroy session
+    session_unset();
+    session_destroy();
+    
+    // Redirect to login page or any other desired location
+    header("Location: index.html");
+    exit();
+}
+
 // Close the database connection
 $conn->close();
 ?>
@@ -88,21 +99,24 @@ $conn->close();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="repositorio-descargar-usuario.html">Explorar repositorio</a>
+                        <a class="nav-link" href="repositorio-descargar-usuario.php">Explorar repositorio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="proyecto.html">Proyecto</a>
+                        <a class="nav-link" href="proyecto.php">Proyecto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="comunidad.html">Comunidad</a>
+                        <a class="nav-link" href="comunidad.php">Comunidad</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="solicitudes.html">Solicitudes de servicio</a>
+                        <a class="nav-link" href="solicitudes.php">Solicitudes de servicio</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-5" style="margin-right: -800px;">
                     <li class="nav-item">
                         <a class="nav-link selected" href="perfil.php">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?logout=true">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
