@@ -1,6 +1,7 @@
 <?php
-session_start();
-
+$_SESSION['ultimo_acceso'] = time();
+include 'backend/session-verification.php';
+verificarSesion();
 // Check if user is logged in
 if (!isset($_SESSION['user_email'])) {
     header("Location: login.html");
