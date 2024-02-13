@@ -2,7 +2,7 @@
 // Ensure you have a secure way to store database credentials
 $servername = "localhost";
 $username = "root";
-$password = "shinobi";
+$password = "";
 $dbname = "lider";
 
 // Create connection

@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_email'])) {
 // Establish a database connection
 $servername = "localhost";
 $username = "root";
-$password = "shinobi";
+$password = "";
 $dbname = "lider";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -135,7 +135,7 @@ $conn->close();
                 <div class="card mb-4">
                     <div class="card-header">Información de la cuenta</div>
                     <div class="card-body">
-                        <form method="post" action="/SENA-LIDER/perfil.php">
+                        <form method="post" action="../SENA-LIDER/perfil.php">
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3 form-row-gx-3">
                                 <!-- Form Group (first name)-->

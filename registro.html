@@ -13,10 +13,25 @@
 
             if (password !== confirmPassword) {
                 alert("Passwords do not match");
+                debugger;
                 return false;
             }
             return true;
         }
+        function validaNumericos(){
+            var inputtxt = document.getElementById('phone'); 
+            var valor = inputtxt.value;
+            for(i=0;i<valor.length;i++){
+                var code=valor.charCodeAt(i);
+                    if(code<=48 || code>=57){          
+                    inputtxt.value="";
+                    console.log("hay letras")
+                    debugger 
+                    return;
+                    }    
+            }
+  
+}
     </script>
 </head>
 <body>
@@ -36,7 +51,7 @@
     <!-- Page Content -->
     <div class="container mt-5">
         <center><h2 class="mb-4">Registro</h2></center>
-        <form id="loginForm" action="/SENA-LIDER/backend/process-registration.php" method="post" onsubmit="return validateForm()">
+        <form id="loginForm" action="../SENA-LIDER/backend/process-registration.php" method="post" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="names" class="visually-hidden">Nombres:</label>
                 <input type="text" class="form-control custom-gray-bg" id="names" name="names" placeholder="Nombres" required>
