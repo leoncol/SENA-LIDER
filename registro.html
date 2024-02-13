@@ -6,33 +6,7 @@
     <title>Registro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function validateForm() {
-            var password = document.getElementById("password").value;
-            var confirmPassword = document.getElementById("confirmPassword").value;
-
-            if (password !== confirmPassword) {
-                alert("Passwords do not match");
-                debugger;
-                return false;
-            }
-            return true;
-        }
-        function validaNumericos(){
-            var inputtxt = document.getElementById('phone'); 
-            var valor = inputtxt.value;
-            for(i=0;i<valor.length;i++){
-                var code=valor.charCodeAt(i);
-                    if(code<=48 || code>=57){          
-                    inputtxt.value="";
-                    console.log("hay letras")
-                    debugger 
-                    return;
-                    }    
-            }
-  
-}
-    </script>
+    <script src="funciones.js"></script>
 </head>
 <body>
 
@@ -64,12 +38,15 @@
             <br>
             <div class="form-group">
                 <label for="phone" class="visually-hidden">Teléfono:</label>
-                <input type="text" class="form-control custom-gray-bg" id="phone" name="phone" placeholder="Teléfono" required>
+                <input type="text" class="form-control custom-gray-bg" id="phone" name="phone" placeholder="Teléfono" required oninput="validaTelefono()">
+                <span id="mensajeError" style="color: red;"></span>
             </div>
             <br>
             <div class="form-group">
                 <label for="email" class="visually-hidden">Correo electrónico:</label>
                 <input type="text" class="form-control custom-gray-bg" id="email" name="email" placeholder="Correo electrónico" required>
+                <span id="ErrorCorreo" style="color: red;"></span>
+
             </div>
             <br>
             <div class="form-group">

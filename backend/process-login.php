@@ -35,11 +35,14 @@ if ($result->num_rows == 1) {
         // Password is correct, set session
         $_SESSION['user_email'] = $row['Correo']; // Adjusted to 'Correo'
         // Redirect to profile page
+        $_SESSION['id']= $row['ID'];
+        $_SESSION['id'] =session_id();
         header("Location: ../perfil.php");
         exit();
     } else {
         // Password is incorrect
         echo "Incorrect password";
+        
     }
 } else {
     // User not found
