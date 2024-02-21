@@ -56,12 +56,16 @@
             <br>
             <div class="form-group">
                 <label for="password" class="visually-hidden">Contraseña:</label>
-                <input type="password" class="form-control custom-gray-bg" id="password" name="password" placeholder="Contraseña" required>
+                <input type="password" class="form-control custom-gray-bg" id="password" name="password" placeholder="Contraseña" required oninput="validaContraseña()">
+                <span id="errorPass" style="color: red;"></span>
+
             </div>
             <br>
             <div class="form-group">
                 <label for="confirmPassword" class="visually-hidden">Confirmar contraseña:</label>
-                <input type="password" class="form-control custom-gray-bg" id="confirmPassword" name="confirmPassword" placeholder="Confirmar contraseña" required>
+                <input type="password" class="form-control custom-gray-bg" id="confirmPassword" name="confirmPassword" placeholder="Confirmar contraseña" required oninput="contraseñaIgual()">
+                <span id="igual" style="color: red;"></span>
+
             </div>
             <br>
             <center><button type="submit" class="btn custom-button-color">Registrarse</button></center>

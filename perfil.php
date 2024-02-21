@@ -1,12 +1,10 @@
 <?php
+session_start();
 $_SESSION['ultimo_acceso'] = time();
 include 'backend/session-verification.php';
 verificarSesion();
+
 // Check if user is logged in
-if (!isset($_SESSION['user_email'])) {
-    header("Location: login.html");
-    exit();
-}
 
 // Establish a database connection
 $servername = "localhost";
@@ -31,7 +29,7 @@ if(isset($_SESSION['user_email'])) {
 }
 
 // Fetch user information from the database
-$sql = "SELECT * FROM usuario WHERE Correo = '$user_email'";
+$sql = "SELECT * FROM $_SESSION[rol] WHERE Correo = '$user_email'";
 $result = $conn->query($sql);
 
 if ($result && $result->num_rows == 1) {
@@ -196,7 +194,7 @@ $conn->close();
                                 <div class="col-md-6 mt-3">
                                     <label class="small mb-1" for="inputRole">Rol</label>
                                     <div class="gray-field">
-                                        <input class="form-control" id="inputRole" type="text" value="<?php echo $usuario['Rol']; ?>" placeholder="Pre-selected rol" readonly>
+                                        <input class="form-control" id="inputRole" type="text" value="<?php echo $_SESSION['Rol']; ?>" placeholder="Pre-selected rol" readonly>
                                     </div>
                                 </div>
                             </div>

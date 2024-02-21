@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION['ultimo_acceso'] = time();
+include 'backend/session-verification.php';
+verificarSesion();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

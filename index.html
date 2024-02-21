@@ -38,16 +38,21 @@
 
         <!-- Dropdown button for Rol -->
         <div class="form-group">
-            <label for="rol" class="visually-hidden">Rol:</label>
+            <label for="rol" class="visually-hidden"></label>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownRol" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Seleccionar Rol
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownRol">
+                <select class="form-control" id="rol" name="rol" aria-placeholder="rol">
+                    <option value="">selecciona un Rol</option>
+
+                    <option value="funcionario_lider">funcionario LIDER</option>
+                    <option value="asesor">Asesor</option>
+                    <option value="usuario">Usuario</option>
+                </select>
+                
+                <!-- <div class="dropdown-menu" aria-labelledby="dropdownRol" id="rol">
                     <a class="dropdown-item" href="#" data-value="Funcionario LIDER">Funcionario LIDER</a>
                     <a class="dropdown-item" href="#" data-value="Administrador LIDER">Administrador LIDER</a>
                     <a class="dropdown-item" href="#" data-value="Usuario">Usuario</a>
-                </div>
+                </div> -->
             </div>
         </div>
 

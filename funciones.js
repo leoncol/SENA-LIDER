@@ -61,3 +61,29 @@ function validaTelefono(){
     }}
 
 }
+function validaContraseña(){
+    var password = document.getElementById("password").value;
+    var sitio = document.getElementById("errorPass");
+
+    var men = "";
+    var men1 = "la contraseña debe contener minimo 8 caracteres. \n";
+    var men2 = "la contraseña debe contener al menos 1 mayuscula. \n"
+
+
+    if(password.length<8){
+        men = `${men} ${men1}`
+    }
+    if(!(/[A-Z]/.test(password))){
+        men = `${men} ${men2}`
+    }
+    sitio.innerHTML = men
+}
+function contraseñaIgual(){
+    var password = document.getElementById("password").value;
+    var cpassword = document.getElementById("confirmPassword").value;
+    var span = document.getElementById("igual");
+
+    if (password!=cpassword){
+        span.innerHTML="!!"
+    }
+}

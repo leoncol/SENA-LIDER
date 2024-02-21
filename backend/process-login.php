@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 // Ensure you have a secure way to store database credentials
 $servername = "localhost";
@@ -18,14 +18,15 @@ if ($conn->connect_error) {
 // Get user input from the form
 $email = isset($_POST['email']) ? $_POST['email'] : '';
 $password = isset($_POST['password']) ? $_POST['password'] : '';
-
+$rol = isset($_POST['rol']) ? $_POST['rol'] : '';   
+            
 // Validate that required fields are not empty
-if (empty($email) || empty($password)) {
-    die("Error: Email and password are required");
+if (empty($email) || empty($password) || empty($rol)) {
+    die("Error: Email, rol and password are required");
 }
 
 // Prepare SQL statement to retrieve user data based on email
-$sql = "SELECT * FROM usuario WHERE Correo = '$email'";
+$sql = "SELECT * FROM $rol WHERE Correo = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows == 1) {
@@ -33,10 +34,13 @@ if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     if (password_verify($password, $row['Contraseña'])) {
         // Password is correct, set session
+        session_start();
+        $_SESSION['time'] = time();
         $_SESSION['user_email'] = $row['Correo']; // Adjusted to 'Correo'
         // Redirect to profile page
         $_SESSION['id']= $row['ID'];
-        $_SESSION['id'] =session_id();
+        $_SESSION['rol']=$rol;
+        
         header("Location: ../perfil.php");
         exit();
     } else {

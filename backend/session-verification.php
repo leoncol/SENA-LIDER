@@ -1,9 +1,12 @@
 <?php
 function verificarSesion() {
     session_start();
-
+    if (!isset($_SESSION['user_email'])) {
+        header("Location: login.html");
+        exit();
+    }
     // Definir el tiempo máximo de inactividad en segundos (por ejemplo, 300 segundos = 5 minutos)
-    $tiempoMaximoInactividad = 30;
+    $tiempoMaximoInactividad = 15;
 
     // Verificar si la última actividad ha ocurrido dentro del tiempo permitido
     if (isset($_SESSION['ultimo_acceso']) && (time() - $_SESSION['ultimo_acceso'] > $tiempoMaximoInactividad)) {
